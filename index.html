@@ -46,7 +46,23 @@
     </body>
 
     <script>
-        $("#screenshot_btn").click(function () {
+        document
+            .getElementById("screenshot_btn")
+            .addEventListener("click", function () {
+                let aScene = document
+                    .querySelector("a-scene")
+                    .components.screenshot.getCanvas("perspective");
+                let frame = captureVideoFrame("video", "png");
+                aScene = resizeCanvas(aScene, frame.width, frame.height);
+                frame = frame.dataUri;
+                mergeImages([frame, aScene]).then((b64) => {
+                    let link = document.getElementById("download-link", "png");
+                    link.setAttribute("download", "AR.png");
+                    link.setAttribute("href", b64);
+                    link.click();
+                });
+            });
+        /* $("#screenshot_btn").click(function () {
             document.querySelector("video").pause();
             let aScene = document
                 .querySelector("a-scene")
@@ -61,7 +77,7 @@
                 link.click();
             });
             document.querySelector("video").play();
-        });
+        }); */
 
         function resizeCanvas(origCanvas, width, height) {
             let resizedCanvas = document.createElement("canvas");
