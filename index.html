@@ -48,6 +48,7 @@
         document
             .getElementById("screenshot_btn")
             .addEventListener("click", function () {
+                document.querySelector("video").pause();
                 let aScene = document
                     .querySelector("a-scene")
                     .components.screenshot.getCanvas("perspective");
