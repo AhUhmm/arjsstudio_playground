@@ -23,6 +23,14 @@
                     id="animated-asset"
                     src="assets/EU_05.gltf"
                 ></a-asset-item>
+                <a-asset-item>
+                    <video
+                        id="video"
+                        autoplay
+                        loop="true"
+                        src="assets/EU_VideoTest.mp4"
+                    ></video>
+                </a-asset-item>
             </a-assets>
 
             <a-marker
@@ -42,6 +50,12 @@
                     gltf-model="#animated-asset"
                     class="clickable"
                     gesture-handler
+                    ><a-video
+                        src="#video"
+                        width="16"
+                        height="9"
+                        position="0 0 0"
+                    ></a-video
                 ></a-entity>
             </a-marker>
 
