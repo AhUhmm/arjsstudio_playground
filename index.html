@@ -2,7 +2,7 @@
 <html>
     <head>
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-arp.js"></script>
         <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
@@ -13,31 +13,25 @@
     <body style="margin: 0; overflow: hidden">
         <a-scene
             vr-mode-ui="enabled: false;"
-            loading-screen="enabled: false;"
-            renderer="logarithmicDepthBuffer: true;"
-            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-            id="scene"
             embedded
-            gesture-detector
+            arjs="debugUIEnabled: false;"
         >
             <a-assets>
                 <a-asset-item
                     id="animated-asset"
                     src="assets/EU_03.gltf"
                 ></a-asset-item>
-                <a-asset-item>
-                    <video
-                        crossorigin="anonymous"
-                        preload="auto"
-                        autoplay="true"
-                        muted="true"
-                        loop="true"
-                        webkit-playsinline
-                        playsinline
-                        id="video"
-                        src="./assets/EU_VideoTest.mp4"
-                    ></video>
-                </a-asset-item>
+                <video
+                    crossorigin="anonymous"
+                    preload="auto"
+                    autoplay="true"
+                    muted="true"
+                    loop="true"
+                    webkit-playsinline
+                    playsinline
+                    id="video"
+                    src="./assets/EU_VideoTest.mp4"
+                ></video>
             </a-assets>
 
             <a-marker
@@ -46,12 +40,11 @@
                 preset="custom"
                 url="./assets/EUmarker.patt"
                 emitevents="true"
-                id="markerA"
             >
                 <a-entity
-                    videhandler
-                    geometry="primitive: plane"
+                    videohandler
                     material="src: #video;"
+                    geometry="primitive: plane"
                     rotation="-90 0 0"
                     scale="1.6 0.9 0"
                 ></a-entity>
