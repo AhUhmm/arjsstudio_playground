@@ -1,42 +1,65 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>GeoAR.js demo</title>
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+        <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
     </head>
-    <script>
-        AFRAME.registerComponent("clickhandler", {
-            init: function () {
-                this.el.addEventListener("click", () => {
-                    alert("Clicked!");
-                });
-            },
-        });
-    </script>
+
     <body style="margin: 0; overflow: hidden">
-        <div class="arjs-loader">
-            <div>Loading, please wait...</div>
-        </div>
         <a-scene
-            cursor="rayOrigin: mouse; fuse: true; fuseTimeout: 0;"
-            raycaster="objects: [clickhandler];"
-            vr-mode-ui="enabled: false"
+            vr-mode-ui="enabled: false;"
+            loading-screen="enabled: false;"
+            renderer="logarithmicDepthBuffer: true;"
+            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+            id="scene"
             embedded
             gesture-detector
-            arjs="sourceType: webcam; debugUIEnabled: false;"
         >
-            <a-box
-                clickhandler
-                material="color: red;"
-                scale="1 1 1"
-                gps-entity-place="latitude: 41.790390; longitude: 12.423205;"
-            >
-            </a-box>
+            <a-assets>
+                <a-asset-item
+                    id="animated-asset"
+                    src="assets/EU_03.gltf"
+                ></a-asset-item>
+                <a-asset-item>
+                    <video
+                        id="video"
+                        autoplay
+                        loop="true"
+                        src="assets/ujevic.mp4"
+                    ></video>
+                </a-asset-item>
+            </a-assets>
 
-            <a-camera gps-camera rotation-reader> </a-camera>
+            <a-marker
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="assets/EUmarker.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.5572716678664501 0.5572716678664501 0.5572716678664501"
+                    rotation="0 0 90"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset"
+                    class="clickable"
+                    gesture-handler
+                >
+                    <a-entity
+                        geometry="primitive: plane"
+                        material="src: #video01;  metalness: 0;"
+                    ></a-entity>
+                </a-entity>
+            </a-marker>
+
+            <a-entity camera></a-entity>
         </a-scene>
     </body>
 </html>
