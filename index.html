@@ -45,11 +45,20 @@
                 emitevents="true"
             >
                 <a-entity
-                    videohandler
-                    material="src: #video;"
-                    geometry="primitive: plane"
-                    rotation="-90 0 0"
-                    scale="1.6 0.9 0"
+                    id="bowser-model"
+                    scale="0.5572716678664501 0.5572716678664501 0.5572716678664501"
+                    rotation="0 0 90"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset"
+                    class="clickable"
+                    gesture-handler
+                    ><a-entity
+                        videohandler
+                        material="src: #video;"
+                        geometry="primitive: plane"
+                        rotation="-90 0 0"
+                        scale="1.6 0.9 0"
+                    ></a-entity
                 ></a-entity>
             </a-marker>
 
