@@ -33,7 +33,7 @@
                         webkit-playsinline
                         playsinline
                         id="video"
-                        src="assets/EU_VideoTest.mp4"
+                        src="./assets/ujevic.mp4"
                     ></video>
                 </a-asset-item>
             </a-assets>
@@ -42,16 +42,14 @@
                 id="animated-marker"
                 type="pattern"
                 preset="custom"
-                url="assets/EUmarker.patt"
-                raycaster="objects: .clickable"
+                url="./assets/EUmarker.patt"
                 emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
                 id="markerA"
             >
                 <a-entity
                     geometry="primitive: plane"
                     material="src: #video;"
-                    rotation="0 0 0"
+                    rotation="0 0 90"
                 ></a-entity>
             </a-marker>
 
