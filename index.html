@@ -25,9 +25,14 @@
                 ></a-asset-item>
                 <a-asset-item>
                     <video
-                        id="video"
-                        autoplay
+                        crossorigin="anonymous"
+                        preload="auto"
+                        autoplay="true"
+                        muted="true"
                         loop="true"
+                        webkit-playsinline
+                        playsinline
+                        id="video"
                         src="assets/ujevic.mp4"
                     ></video>
                 </a-asset-item>
@@ -45,7 +50,7 @@
             >
                 <a-entity
                     geometry="primitive: plane"
-                    material="src: #video01;"
+                    material="src: #video;"
                 ></a-entity>
             </a-marker>
 
