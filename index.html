@@ -23,8 +23,6 @@
 
         <script>
             window.onload = function () {
-                var myVideo1 = document.getElementById("video1");
-
                 var scene = document.querySelector("a-scene");
 
                 if (scene.hasLoaded) {
@@ -34,7 +32,7 @@
                 }
 
                 function run() {
-                    var myVideo1 = document.querySelector("#video1");
+                    var myVideo1 = scene.querySelector("#video1");
                     if (myVideo1.getAttribute("visible") == false) {
                         alert("Invisible");
                     }
