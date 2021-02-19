@@ -18,9 +18,12 @@ AFRAME.registerComponent("foo", {
             this.el.object3D.getWorldPosition(pos);
             if (frustum.containsPoint(pos)) {
                 // Do something with the position...
-                this.vid.pause();
+                //this.vid.pause();
             } else {
-                this.vid.play();
+                var x = document.getElementsByClassName("debug");
+                x.style.display = "flex";
+                document.getElementById("debugContent").innerHTML = pos;
+                //this.vid.play();
             }
         }
     },
