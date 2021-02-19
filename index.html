@@ -24,6 +24,7 @@
         <script>
             window.onload = function () {
                 var scene = document.querySelector("a-scene");
+                var myVideo = document.getElementById("video1");
 
                 if (scene.hasLoaded) {
                     run();
@@ -40,7 +41,10 @@
                             // here you can change also a-scene or a-entity properties, like
                             // changing your 3D model source, size, position and so on
                             // or you can just open links, trigger actions...
-                            alert(dist);
+                            //alert(dist);
+                            if (dist < 3) {
+                                myVideo.muted = !myVideo.muted;
+                            }
                         });
                 }
             };
