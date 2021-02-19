@@ -37,17 +37,17 @@
                         .addEventListener("click", function () {
                             var pos = document.querySelector("#roma").object3D
                                 .position;
-                            //document
-                            //    .querySelector("#roma")
-                            //    .object3D.getWorldPosition(pos);
+
+                            var worldPos = document
+                                .querySelector("#roma")
+                                .object3D.getWorldPosition(pos);
                             var dist = document
                                 .querySelector("#roma")
                                 .getAttribute("distance");
                             if (dist >= 0) {
                                 myVideo.muted = !myVideo.muted;
-                                var msg = String(pos);
-                                alert(msg);
-                                console.log(pos);
+                                alert("tap!");
+                                console.log(worldPos);
                                 return false;
                             }
                             //alert(dist);
