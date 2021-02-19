@@ -20,18 +20,29 @@
         <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
         <!-- script to play and pause video -->
         <script src="./js/video-handler.js"></script>
-        <!-- script to play and pause video -->
-        <script src="./js/audio.js"></script>
+
         <script>
             window.onload = function () {
-                document
-                    .querySelector(".say-hi-button")
-                    .addEventListener("click", function () {
-                        // here you can change also a-scene or a-entity properties, like
-                        // changing your 3D model source, size, position and so on
-                        // or you can just open links, trigger actions...
-                        alert("Hi there!");
-                    });
+                var scene = document.querySelector("a-scene");
+
+                if (scene.hasLoaded) {
+                    run();
+                } else {
+                    scene.addEventListener("loaded", run);
+                }
+                function run() {
+                    document
+                        .querySelector(".say-hi-button")
+                        .addEventListener("click", function () {
+                            var dist = document
+                                .querySelector("#roma")
+                                .getAttribute("distance");
+                            // here you can change also a-scene or a-entity properties, like
+                            // changing your 3D model source, size, position and so on
+                            // or you can just open links, trigger actions...
+                            alert(dist);
+                        });
+                }
             };
         </script>
         <style>
@@ -49,25 +60,6 @@
             }
 
             .arjs-loader div {
-                text-align: center;
-                font-size: 1.25em;
-                color: white;
-            }
-
-            .debug {
-                height: 100%;
-                width: 100%;
-                position: absolute;
-                top: 0;
-                left: 0;
-                background-color: rgba(0, 0, 0, 0.8);
-                z-index: 9999;
-                display: none;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .debug div {
                 text-align: center;
                 font-size: 1.25em;
                 color: white;
