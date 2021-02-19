@@ -45,7 +45,9 @@
                                 .getAttribute("distance");
                             if (dist >= 0) {
                                 myVideo.muted = !myVideo.muted;
-                                alert(String(pos));
+                                var msg = String(pos);
+                                alert(msg);
+                                console.log(pos);
                                 return false;
                             }
                             //alert(dist);
