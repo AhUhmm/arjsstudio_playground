@@ -35,12 +35,11 @@
                     document
                         .querySelector(".say-hi-button")
                         .addEventListener("click", function () {
-                            var pos = document.querySelector("#roma").object3D
-                                .position;
+                            var pos = new THREE.Vector3();
 
                             var worldPos = document
                                 .querySelector("#roma")
-                                .object3D.getWorldPosition();
+                                .object3D.getWorldPosition(pos);
                             var dist = document
                                 .querySelector("#roma")
                                 .getAttribute("distance");
