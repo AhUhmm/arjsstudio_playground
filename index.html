@@ -35,18 +35,34 @@
                     document
                         .querySelector(".say-hi-button")
                         .addEventListener("click", function () {
+                            var cam = this.el.sceneEl.camera;
+                            var frustum = new THREE.Frustum();
+                            frustum.setFromMatrix(
+                                new THREE.Matrix4().multiplyMatrices(
+                                    cam.projectionMatrix,
+                                    cam.matrixWorldInverse
+                                )
+                            );
+
                             var pos = new THREE.Vector3();
 
                             var worldPos = document
                                 .querySelector("#roma")
                                 .object3D.getWorldPosition(pos);
+
                             var dist = document
                                 .querySelector("#roma")
                                 .getAttribute("distance");
+
                             if (dist >= 0) {
                                 myVideo.muted = !myVideo.muted;
-                                alert("tap!");
-                                console.log(worldPos);
+
+                                if (frustum.containsPoint(pos)) {
+                                    // Do something with the position...
+                                    console.log(worldPos);
+                                    alert("tap!");
+                                    //this.vid.pause();
+                                }
                                 return false;
                             }
                             //alert(dist);
