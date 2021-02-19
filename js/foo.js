@@ -18,13 +18,9 @@ AFRAME.registerComponent("foo", {
             this.el.object3D.getWorldPosition(pos);
             if (frustum.containsPoint(pos)) {
                 // Do something with the position...
-                console.log(pos);
+                //console.log("visibile");
+                alert("visibile");
                 //this.vid.pause();
-            } else {
-                var x = document.getElementsByClassName("debug");
-                x.style.display = "flex";
-                document.getElementById("debugContent").innerHTML = pos;
-                //this.vid.play();
             }
         }
     },
