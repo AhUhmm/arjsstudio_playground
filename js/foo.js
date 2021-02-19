@@ -18,6 +18,7 @@ AFRAME.registerComponent("foo", {
             this.el.object3D.getWorldPosition(pos);
             if (frustum.containsPoint(pos)) {
                 // Do something with the position...
+                console.log(pos);
                 //this.vid.pause();
             } else {
                 var x = document.getElementsByClassName("debug");
