@@ -24,7 +24,7 @@ AFRAME.registerComponent("foo", {
                     var video1 = document.querySelector("#video2");
 
                     video1.muted = !video1.muted;
-                    console.log(this.el.getAttribute("material").src);
+                    //console.log(this.el.getAttribute("material"));
                     console.log(this.el.getDOMAttribute("material").src);
                     var btnTxt = document.getElementById("displayBtn");
                     btnTxt.innerHTML = "Sound Off";
