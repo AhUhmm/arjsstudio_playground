@@ -20,57 +20,9 @@
         <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
         <!-- script to play and pause video -->
         <script src="./js/video-handler.js"></script>
+
         <script src="./js/foo.js"></script>
 
-        <script>
-            window.onload = function () {
-                var scene = document.querySelector("a-scene");
-                var myVideo = document.getElementById("video1");
-
-                if (scene.hasLoaded) {
-                    run();
-                } else {
-                    scene.addEventListener("loaded", run);
-                }
-                function run() {
-                    document
-                        .querySelector(".say-hi-button")
-                        .addEventListener("click", function () {
-                            var cam = this.el.sceneEl.camera;
-                            var frustum = new THREE.Frustum();
-                            frustum.setFromMatrix(
-                                new THREE.Matrix4().multiplyMatrices(
-                                    cam.projectionMatrix,
-                                    cam.matrixWorldInverse
-                                )
-                            );
-
-                            var pos = new THREE.Vector3();
-
-                            document
-                                .querySelector("#roma")
-                                .object3D.getWorldPosition(pos);
-
-                            var dist = document
-                                .querySelector("#roma")
-                                .getAttribute("distance");
-
-                            if (dist >= 0) {
-                                myVideo.muted = !myVideo.muted;
-
-                                if (frustum.containsPoint(pos)) {
-                                    // Do something with the position...
-                                    console.log(worldPos);
-                                    alert("tap!");
-                                    //this.vid.pause();
-                                }
-                                return false;
-                            }
-                            //alert(dist);
-                        });
-                }
-            };
-        </script>
         <style>
             .arjs-loader {
                 height: 100%;
@@ -120,7 +72,7 @@
             <div>Loading, please wait...</div>
         </div>
         <div class="buttons">
-            <button class="say-hi-button" id="displayBtn">SAY HI!</button>
+            <button class="say-hi-button" id="displayBtn">Sound On</button>
         </div>
         <a-scene
             vr-mode-ui="enabled: false"
@@ -203,7 +155,7 @@
                 rotation-reader
                 look-controls-enabled="false"
                 arjs-look-controls="smoothingFactor: 0.1"
-                gps-camera="alert: true; positionMinAccuracy: 10; gpsMinDistance: 3; gpsTimeInterval: 1500; simulateLatitude: 41.790306; simulateLongitude: 12.423255;"
+                gps-camera="alert: true; positionMinAccuracy: 10; gpsMinDistance: 3; gpsTimeInterval: 1500; simulateLatitude: 41.790278; simulateLongitude: 12.423193"
             ></a-camera>
         </a-scene>
     </body>
