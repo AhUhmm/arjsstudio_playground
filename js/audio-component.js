@@ -28,7 +28,7 @@ AFRAME.registerComponent("audiohandler", {
                     video2.muted = true;
 
                     //console.log(this.el.getAttribute("material"));
-                    console.log(videoSrc.getDOMAttribute("material").src);
+                    console.log(videoSrc.getDOMAttribute("material"));
                     var btnTxt = document.getElementById("displayBtn");
                     btnTxt.innerHTML = "Sound Off";
                 };
