@@ -18,8 +18,9 @@ AFRAME.registerComponent("audiohandler2", {
             this.el.object3D.getWorldPosition(pos);
 
             if (frustum.containsPoint(pos)) {
-                document.getElementById(btn2).style.display = "block";
+                //document.getElementById(btn2).style.display = "block";
                 // Do something with the position...
+
                 window.onclick = function () {
                     var video1 = document.querySelector("#video1");
                     var video2 = document.querySelector("#video2");
@@ -34,8 +35,6 @@ AFRAME.registerComponent("audiohandler2", {
                     //var btnTxt = document.getElementById("displayBtn");
                     //btnTxt.innerHTML = "Sound Off";
                 };
-            } else {
-                //document.getElementById(btn2).style.display = "none";
             }
         }
     },

@@ -19,7 +19,7 @@ AFRAME.registerComponent("audiohandler1", {
 
             if (frustum.containsPoint(pos)) {
                 // Do something with the position...
-                document.getElementById(btn1).style.display = "none";
+                //document.getElementById(btn1).style.display = "none";
 
                 window.onclick = function () {
                     var video1 = document.querySelector("#video1");
@@ -35,8 +35,6 @@ AFRAME.registerComponent("audiohandler1", {
                     //var btnTxt = document.getElementById("displayBtn");
                     //btnTxt.innerHTML = "Sound Off";
                 };
-            } else {
-                //document.getElementById(btn1).style.display = "none";
             }
         }
     },
