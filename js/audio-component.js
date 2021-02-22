@@ -24,12 +24,12 @@ AFRAME.registerComponent("audiohandler", {
                     var video2 = document.querySelector("#video2");
                     //var videoSrc = this.el.object3D.getAttribute("material");
                     var videoSrc = document.querySelector("#roma");
-                    var videoMat = videoSrc.getAttribute("material").src;
+                    //var videoMat = videoSrc.getAttribute("material").src;
 
                     video1.muted = !video1.muted;
                     video2.muted = true;
 
-                    console.log(videoMat);
+                    console.log(videoSrc.getAttribute("material").src);
                     //var btnTxt = document.getElementById("displayBtn");
                     //btnTxt.innerHTML = "Sound Off";
                 };
