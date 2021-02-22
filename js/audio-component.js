@@ -23,14 +23,13 @@ AFRAME.registerComponent("audiohandler", {
                     var video1 = document.querySelector("#video1");
                     var video2 = document.querySelector("#video2");
                     //var videoSrc = this.el.object3D.getAttribute("material");
-                    var videoSrc = document
-                        .querySelector("#roma")
-                        .object3D.getAttribute("material", "src");
+                    var videoSrc = document.querySelector("#roma");
+                    var videoMat = videoSrc.getDOMAttribute("material").src;
 
                     video1.muted = !video1.muted;
                     video2.muted = true;
 
-                    console.log(videoSrc);
+                    console.log(videoMat);
                     //var btnTxt = document.getElementById("displayBtn");
                     //btnTxt.innerHTML = "Sound Off";
                 };
