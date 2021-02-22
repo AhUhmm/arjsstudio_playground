@@ -24,7 +24,7 @@ AFRAME.registerComponent("audiohandler", {
                     var video2 = document.querySelector("#video2");
                     //var videoSrc = this.el.object3D.getAttribute("material");
                     var videoSrc = document.querySelector("#roma");
-                    var videoMat = videoSrc.getDOMAttribute("material").src;
+                    var videoMat = videoSrc.getAttribute("material").src;
 
                     video1.muted = !video1.muted;
                     video2.muted = true;
