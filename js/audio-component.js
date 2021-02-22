@@ -1,6 +1,7 @@
 AFRAME.registerComponent("audiohandler", {
     init: function () {
         this.vid = document.querySelector("#video1");
+        var sceneEl = document.querySelector("a-scene");
     },
     tick: function () {
         if (this.el.sceneEl.camera) {
@@ -22,11 +23,12 @@ AFRAME.registerComponent("audiohandler", {
                 window.onclick = function () {
                     var video1 = document.querySelector("#video1");
                     var video2 = document.querySelector("#video2");
+                    var videoSrc = sceneEL.querySelector("#roma");
 
                     video1.muted = !video1.muted;
                     video2.muted = true;
                     //console.log(this.el.getAttribute("material"));
-                    console.log(this.el.getDOMAttribute("material").src);
+                    console.log(videoSrc.getDOMAttribute("material").src);
                     var btnTxt = document.getElementById("displayBtn");
                     btnTxt.innerHTML = "Sound Off";
                 };
