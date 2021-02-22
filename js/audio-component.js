@@ -1,4 +1,4 @@
-AFRAME.registerComponent("foo", {
+AFRAME.registerComponent("audiohandler", {
     init: function () {
         this.vid = document.querySelector("#video1");
     },
