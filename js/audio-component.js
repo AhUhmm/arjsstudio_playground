@@ -1,4 +1,4 @@
-AFRAME.registerComponent("audiohandler", {
+AFRAME.registerComponent("audiohandler1", {
     init: function () {
         this.vid = document.querySelector("#video1");
     },
@@ -23,13 +23,13 @@ AFRAME.registerComponent("audiohandler", {
                     var video1 = document.querySelector("#video1");
                     var video2 = document.querySelector("#video2");
                     //var videoSrc = this.el.object3D.getAttribute("material");
-                    var videoSrc = document.querySelector("#roma");
+                    //var videoSrc = document.querySelector("#roma");
                     //var videoMat = videoSrc.getAttribute("material").src;
 
                     video1.muted = !video1.muted;
                     video2.muted = true;
 
-                    console.log(videoSrc.getAttribute("material").src);
+                    //console.log(videoSrc.getAttribute("material").src);
                     //var btnTxt = document.getElementById("displayBtn");
                     //btnTxt.innerHTML = "Sound Off";
                 };
