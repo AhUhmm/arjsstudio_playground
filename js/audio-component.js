@@ -1,6 +1,9 @@
 AFRAME.registerComponent("audiohandler", {
     init: function () {
         this.vid = document.querySelector("#video1");
+        this.vid1 = document.querySelector("#video1");
+        this.vid2 = document.querySelector("#video2");
+        var btnTxt = document.getElementById("displayBtn");
     },
     tick: function () {
         if (this.el.sceneEl.camera) {
@@ -20,13 +23,10 @@ AFRAME.registerComponent("audiohandler", {
             if (frustum.containsPoint(pos)) {
                 // Do something with the position...
                 window.onclick = function () {
-                    var video1 = document.querySelector("#video1");
-                    var video1 = document.querySelector("#video2");
-
-                    video1.muted = !video1.muted;
+                    this.vid1.muted = !this.video1.muted;
                     //console.log(this.el.getAttribute("material"));
                     console.log(this.el.getDOMAttribute("material").src);
-                    var btnTxt = document.getElementById("displayBtn");
+
                     btnTxt.innerHTML = "Sound Off";
                 };
             }
