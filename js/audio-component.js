@@ -21,9 +21,10 @@ AFRAME.registerComponent("audiohandler", {
                 // Do something with the position...
                 window.onclick = function () {
                     var video1 = document.querySelector("#video1");
-                    var video1 = document.querySelector("#video2");
+                    var video2 = document.querySelector("#video2");
 
                     video1.muted = !video1.muted;
+                    video2.muted = true;
                     //console.log(this.el.getAttribute("material"));
                     console.log(this.el.getDOMAttribute("material").src);
                     var btnTxt = document.getElementById("displayBtn");
