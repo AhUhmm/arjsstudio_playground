@@ -35,7 +35,7 @@ AFRAME.registerComponent("audiohandler2", {
                     //btnTxt.innerHTML = "Sound Off";
                 };
             } else {
-                document.getElementById(btn2).style.display = "none";
+                //document.getElementById(btn2).style.display = "none";
             }
         }
     },
