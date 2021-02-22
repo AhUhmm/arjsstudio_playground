@@ -1,6 +1,6 @@
 AFRAME.registerComponent("audiohandler2", {
     init: function () {
-        this.vid = document.querySelector("#video2");
+        //this.vid = document.querySelector("#video2");
     },
     tick: function () {
         if (this.el.sceneEl.camera) {
@@ -18,6 +18,8 @@ AFRAME.registerComponent("audiohandler2", {
             this.el.object3D.getWorldPosition(pos);
 
             if (frustum.containsPoint(pos)) {
+                // Do something with the position...
+                alert("visto video 2");
                 window.onclick = function () {
                     var video1 = document.querySelector("#video1");
                     var video2 = document.querySelector("#video2");
