@@ -1,35 +1,36 @@
 window.onload = function () {
     var scene = document.querySelector("a-scene");
+    var myVideo = document.querySelector("video1");
 
     if (scene.hasLoaded) {
         run();
     } else {
         scene.addEventListener("loaded", run);
     }
-
     function run() {
-        var myVideo1 = document.getElementById("video1");
-        var myVideo2 = document.getElementById("video2");
+        document
+            .querySelector(".say-hi-button")
+            .addEventListener("click", function () {
+                var cam = document.querySelector("a-camera");
+                var frustum = new THREE.Frustum();
+                frustum.setFromMatrix(
+                    new THREE.Matrix4().multiplyMatrices(
+                        cam.projectionMatrix,
+                        cam.matrixWorldInverse
+                    )
+                );
 
-        window.onclick = function () {
-            if (document.querySelector("#roma").getAttribute("distance") < 3) {
-                myVideo1.muted = !myVideo.muted;
+                var pos = new THREE.Vector3();
+                document.querySelector("#roma").object3D.getWorldPosition(pos);
 
-                document.getElementById(
-                    "displaybtn"
-                ).innerHTML = document
-                    .querySelector("#roma")
-                    .getAttribute("distance");
-            } else if (
-                document.querySelector("#roma").getAttribute("distance")
-            ) {
-                myVideo2.muted = !myVideo.muted;
-                return false;
-            } else {
-                myVideo1.muted = !myVideo.muted;
-                myVideo2.muted = !myVideo.muted;
-                return false;
-            }
-        };
+                if (frustum.containsPoint(pos)) {
+                    // Do something with the position...
+                    console.log(worldPos);
+                    myVideo.muted = !myVideo.muted;
+                    alert("tap!");
+                    //this.vid.pause();
+                    return false;
+                }
+            });
     }
 };

@@ -16,11 +16,18 @@ AFRAME.registerComponent("foo", {
             // Your 3d point to check
             var pos = new THREE.Vector3();
             this.el.object3D.getWorldPosition(pos);
+
             if (frustum.containsPoint(pos)) {
                 // Do something with the position...
                 //console.log("visibile");
-                alert("visibile");
+                //alert("visibile");
                 //this.vid.pause();
+                window.onclick = function () {
+                    var video1 = document.querySelector("#video1");
+                    video1.muted = !video1.muted;
+                    var btnTxt = document.getElementById("displayBtn");
+                    btnTxt.innerHTML = "Sound Off";
+                };
             }
         }
     },
