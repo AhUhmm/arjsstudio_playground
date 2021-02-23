@@ -19,13 +19,14 @@ AFRAME.registerComponent("audiohandler", {
 
             if (frustum.containsPoint(pos)) {
                 // Do something with the position...
-                alert("visto video 1");
+                //alert("visto video 1");
                 window.onclick = function () {
                     var video1 = document.querySelector("#video1");
                     var video2 = document.querySelector("#video2");
-
+                    var mat = document.querySelector("videoPl1");
                     video1.muted = !video1.muted;
                     video2.muted = true;
+                    console.log(mat.getAttribute("material").src);
                 };
             }
         }
