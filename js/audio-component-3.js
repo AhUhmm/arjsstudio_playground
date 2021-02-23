@@ -13,10 +13,11 @@ AFRAME.registerComponent("audiohandler", {
             // Your 3d point to check
             var pos = new THREE.Vector3();
             this.el.object3D.getWorldPosition(pos);
+
             window.onclick = function () {
                 if (frustum.containsPoint(pos)) {
                     // Do something with the position...
-                    //alert("visto video 1");
+                    alert("visto video 1");
 
                     var video1 = document.querySelector("#video1");
                     var video2 = document.querySelector("#video2");
