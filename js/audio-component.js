@@ -24,11 +24,11 @@ AFRAME.registerComponent("audiohandler", {
                     var video1 = document.querySelector("#video1");
                     var video2 = document.querySelector("#video2");
                     //var mat = document.querySelector("#videoPl1");
-                    var el = this.el.getAttribute("material").src;
+                    //var el = this.el.getAttribute("material").src;
                     video1.muted = !video1.muted;
                     video2.muted = true;
                     //console.log(mat.getAttribute("material").src);
-                    console.log(mat);
+                    //console.log(mat);
                 };
             }
         }
