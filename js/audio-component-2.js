@@ -19,7 +19,7 @@ AFRAME.registerComponent("audiohandler2", {
 
             if (frustum.containsPoint(pos)) {
                 // Do something with the position...
-                alert("visto video 2");
+                //alert("visto video 2");
                 window.onclick = function () {
                     var video1 = document.querySelector("#video1");
                     var video2 = document.querySelector("#video2");
