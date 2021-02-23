@@ -1,7 +1,4 @@
 AFRAME.registerComponent("audiohandler", {
-    init: function () {
-        //this.vid = document.querySelector("#video1");
-    },
     tick: function () {
         if (this.el.sceneEl.camera) {
             var cam = this.el.sceneEl.camera;
