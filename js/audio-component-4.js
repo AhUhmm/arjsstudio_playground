@@ -35,7 +35,7 @@ AFRAME.registerComponent("audiohandler2", {
                     video1.muted = true;
 
                     //console.log(mat.getAttribute("material").src);
-                    console.log(el);
+                    console.log(mat);
                     //alert("visto video 2");
                     console.log(
                         "video 1 is " +
