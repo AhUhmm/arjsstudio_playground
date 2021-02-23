@@ -1,4 +1,4 @@
-AFRAME.registerComponent("audiohandler4", {
+AFRAME.registerComponent("audiohandler", {
     tick: function () {
         if (this.el.sceneEl.camera) {
             var cam = this.el.sceneEl.camera;
