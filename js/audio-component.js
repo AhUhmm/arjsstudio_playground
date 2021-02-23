@@ -23,10 +23,12 @@ AFRAME.registerComponent("audiohandler", {
                 window.onclick = function () {
                     var video1 = document.querySelector("#video1");
                     var video2 = document.querySelector("#video2");
-                    var mat = document.querySelector("#videoPl1");
+                    //var mat = document.querySelector("#videoPl1");
+                    var mat = this.el.object3D.getDOMAttribute("material").src;
                     video1.muted = !video1.muted;
                     video2.muted = true;
-                    console.log(mat.getAttribute("material").src);
+                    //console.log(mat.getAttribute("material").src);
+                    console.log(mat);
                 };
             }
         }
