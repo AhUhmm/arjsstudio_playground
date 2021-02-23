@@ -23,6 +23,8 @@ AFRAME.registerComponent("audiohandler2", {
                     //var mat = document.querySelector("#videoPl1");
                     //var el = this.el.getAttribute("material").src;
 
+                    console.log(video1.muted + " " + video2.muted);
+
                     video2.muted = !video1.muted;
                     video1.muted = true;
 
