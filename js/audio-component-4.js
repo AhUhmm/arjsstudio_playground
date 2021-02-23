@@ -20,8 +20,8 @@ AFRAME.registerComponent("audiohandler2", {
 
                     var video1 = document.querySelector("#video1");
                     var video2 = document.querySelector("#video2");
-                    //var mat = document.querySelector("#videoPl1");
-                    //var el = this.el.getAttribute("material").src;
+                    var mat = document.querySelector("#videoPl1");
+                    var el = this.el;
 
                     console.log(video1.muted + " " + video2.muted);
 
@@ -29,7 +29,7 @@ AFRAME.registerComponent("audiohandler2", {
                     video1.muted = true;
 
                     //console.log(mat.getAttribute("material").src);
-                    //console.log(mat);
+                    console.log(mat);
                     //alert("visto video 2");
                     console.log(video1.muted + " " + video2.muted);
                 }
