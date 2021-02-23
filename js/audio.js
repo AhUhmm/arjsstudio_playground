@@ -28,8 +28,6 @@ window.onload = function () {
                     console.log(worldPos);
                     myVideo.muted = !myVideo.muted;
                     alert("tap!");
-                    //this.vid.pause();
-                    return false;
                 }
             });
     }

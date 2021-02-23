@@ -1,7 +1,4 @@
-AFRAME.registerComponent("audiohandler2", {
-    init: function () {
-        //this.vid = document.querySelector("#video2");
-    },
+AFRAME.registerComponent("audiohandler", {
     tick: function () {
         if (this.el.sceneEl.camera) {
             var cam = this.el.sceneEl.camera;
@@ -17,18 +14,15 @@ AFRAME.registerComponent("audiohandler2", {
             var pos = new THREE.Vector3();
             this.el.object3D.getWorldPosition(pos);
 
-            var entity = this.el;
             if (frustum.containsPoint(pos)) {
                 // Do something with the position...
-                //alert("visto video 2");
+
                 window.onclick = function () {
                     var video1 = document.querySelector("#video1");
                     var video2 = document.querySelector("#video2");
 
-                    video2.muted = !video2.muted;
-                    video1.muted = true;
-
-                    console.log(entity.getAttribute("material").src);
+                    video1.muted = !video1.muted;
+                    video2.muted = true;
                 };
             }
         }
