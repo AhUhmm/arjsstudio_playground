@@ -11,11 +11,11 @@ AFRAME.registerComponent("audiohandler2", {
             );
 
             // Your 3d point to check
-            var pos2 = new THREE.Vector3();
+            var pos = new THREE.Vector3();
             this.el.object3D.getWorldPosition(pos);
 
             window.onclick = function () {
-                if (frustum.containsPoint(pos2)) {
+                if (frustum.containsPoint(pos)) {
                     // Do something with the position...
 
                     var video1 = document.querySelector("#video1");
@@ -29,12 +29,7 @@ AFRAME.registerComponent("audiohandler2", {
                             video2.muted
                     );
 
-                    if (video2.muted) {
-                        video2.muted = false;
-                    } else {
-                        video2.muted = true;
-                    }
-
+                    video2.muted = !video2.muted;
                     video1.muted = true;
 
                     console.log(

@@ -11,17 +11,16 @@ AFRAME.registerComponent("audiohandler1", {
             );
 
             // Your 3d point to check
-            var pos1 = new THREE.Vector3();
+            var pos = new THREE.Vector3();
             this.el.object3D.getWorldPosition(pos);
 
             window.onclick = function () {
-                if (frustum.containsPoint(pos1)) {
+                if (frustum.containsPoint(pos)) {
                     // Do something with the position...
 
                     var video1 = document.querySelector("#video1");
                     var video2 = document.querySelector("#video2");
                     //var mat = document.querySelector("#videoPl1");
-                    //var el = this.el.getAttribute("material").src;
 
                     console.log(
                         "video 1 was " +
@@ -44,6 +43,9 @@ AFRAME.registerComponent("audiohandler1", {
                             "video2 is " +
                             video2.muted
                     );
+
+                    var el = this.el.getDOMAttribute("material");
+                    console.log(el);
                 }
             };
         }
