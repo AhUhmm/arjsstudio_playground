@@ -39,6 +39,8 @@ AFRAME.registerComponent("audiohandler4", {
                             "video2 is " +
                             video2.muted
                     );
+                    var el = this.el;
+                    console.log(el.getAttribute("material"));
                 }
             };
         }
