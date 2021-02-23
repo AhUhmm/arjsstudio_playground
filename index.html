@@ -21,7 +21,7 @@
         <!-- script to play and pause video -->
         <script src="./js/video-handler.js"></script>
         <!-- script to play and pause audio -->
-        <script src="./js/audio-component-4.js"></script>
+        <script src="./js/audio-component-5.js"></script>
         <style>
             .arjs-loader {
                 height: 100%;
@@ -50,6 +50,7 @@
         </div>
 
         <a-scene
+            audiohandler
             vr-mode-ui="enabled: false"
             loading-screen="enabled: false;"
             renderer="logarithmicDepthBuffer: true;"
@@ -98,7 +99,7 @@
                 gps-entity-place="latitude: 41.790390; longitude: 12.423205;"
                 ><a-entity
                     videohandler
-                    id="videoPl1"
+                    id="main"
                     material="src: #video1;"
                     geometry="primitive: plane"
                     position="0.035 0.9 0.02"
@@ -113,8 +114,8 @@
                 scale="1.4 1.4 1.4"
                 gps-entity-place="latitude: 41.790278; longitude: 12.423110;"
                 ><a-entity
-                    audiohandler
                     videohandler
+                    id="random"
                     material="src: #video2;"
                     geometry="primitive: plane"
                     position="0.035 0.9 0.02"
