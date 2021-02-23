@@ -17,6 +17,7 @@ AFRAME.registerComponent("audiohandler2", {
             var pos = new THREE.Vector3();
             this.el.object3D.getWorldPosition(pos);
 
+            var entity = this.el;
             if (frustum.containsPoint(pos)) {
                 // Do something with the position...
                 //alert("visto video 2");
@@ -26,6 +27,8 @@ AFRAME.registerComponent("audiohandler2", {
 
                     video2.muted = !video2.muted;
                     video1.muted = true;
+
+                    console.log(entity.getAttribute("material").src);
                 };
             }
         }
