@@ -20,18 +20,30 @@ AFRAME.registerComponent("audiohandler2", {
 
                     var video1 = document.querySelector("#video1");
                     var video2 = document.querySelector("#video2");
-                    var mat = document.querySelector("#videoPl1");
-                    var el = this.el;
+                    //var mat = document.querySelector("#videoPl1");
+                    var mat = this.el.getAttribute("material");
 
-                    console.log(video1.muted + " " + video2.muted);
+                    console.log(
+                        "video 1 was " +
+                            video1.muted +
+                            ", " +
+                            "video2 was " +
+                            video2.muted
+                    );
 
                     video2.muted = !video1.muted;
                     video1.muted = true;
 
                     //console.log(mat.getAttribute("material").src);
-                    console.log(mat);
+                    console.log(el);
                     //alert("visto video 2");
-                    console.log(video1.muted + " " + video2.muted);
+                    console.log(
+                        "video 1 is " +
+                            video1.muted +
+                            ", " +
+                            "video2 is " +
+                            video2.muted
+                    );
                 }
             };
         }

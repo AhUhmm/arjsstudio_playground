@@ -23,7 +23,13 @@ AFRAME.registerComponent("audiohandler1", {
                     //var mat = document.querySelector("#videoPl1");
                     //var el = this.el.getAttribute("material").src;
 
-                    console.log(video1.muted + " " + video2.muted);
+                    console.log(
+                        "video 1 was " +
+                            video1.muted +
+                            ", " +
+                            "video2 was " +
+                            video2.muted
+                    );
 
                     video1.muted = !video1.muted;
                     video2.muted = true;
@@ -31,7 +37,13 @@ AFRAME.registerComponent("audiohandler1", {
                     //console.log(mat.getAttribute("material").src);
                     //console.log(mat);
                     //alert("visto video 1");
-                    console.log(video1.muted + " " + video2.muted);
+                    console.log(
+                        "video 1 is " +
+                            video1.muted +
+                            ", " +
+                            "video2 is " +
+                            video2.muted
+                    );
                 }
             };
         }
