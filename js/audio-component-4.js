@@ -28,7 +28,7 @@ AFRAME.registerComponent("audiohandler2", {
 
                     //console.log(mat.getAttribute("material").src);
                     //console.log(mat);
-                    alert("visto video 2");
+                    //alert("visto video 2");
                 }
             };
         }
