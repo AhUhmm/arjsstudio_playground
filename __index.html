@@ -9,7 +9,9 @@
         />
         <meta name="apple-mobile-web-app-capable" content="yes" />
 
-        <title>EU Playground</title>
+        <title>
+            Europa Square - I.C. Luigi Perna - Dante Alighieri, Avellino
+        </title>
         <!-- include A-Frame -->
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <!-- include Supermedium look-at component for A-Frame -->
@@ -45,32 +47,8 @@
     </head>
 
     <body style="margin: 0; overflow: hidden">
-        <script>
-            const src = "./assets/totems.json";
-
-            function getRndInteger(min, max) {
-                return Math.floor(Math.random() * (max - min + 1)) + min;
-            }
-
-            async function totemRandomizer() {
-                const response = await fetch(src);
-                const data = await response.json();
-                const dataLength = Object.keys(data).length;
-                console.log(dataLength);
-                const item = getRndInteger(1, dataLength);
-                document
-                    .getElementById("randomTotem")
-                    .setAttribute("src", data[item].totem);
-                document
-                    .getElementById("randomVideo")
-                    .setAttribute("src", data[item].video);
-            }
-
-            totemRandomizer();
-        </script>
-
         <div class="arjs-loader">
-            <div>Loading, please wait...</div>
+            <div>Europa Square is loading, please wait...</div>
         </div>
 
         <a-scene
@@ -85,15 +63,8 @@
             <a-assets>
                 <a-asset-item
                     id="totem"
-                    src="./assets/EU_04_BLU.gltf"
+                    src="./assets/IT14.gltf"
                 ></a-asset-item>
-
-                <a-asset-item
-                    id="totem"
-                    src="./assets/EU_04_BLU.gltf"
-                ></a-asset-item>
-
-                <a-asset-item id="randomTotem" src=""></a-asset-item>
 
                 <video
                     crossorigin="anonymous"
@@ -107,22 +78,9 @@
                     id="video1"
                     src="./video/herman.mp4"
                 ></video>
-
-                <video
-                    crossorigin="anonymous"
-                    preload="auto"
-                    autoplay
-                    muted="true"
-                    response-type="arraybuffer"
-                    loop
-                    webkit-playsinline
-                    playsinline
-                    id="randomVideo"
-                    src=""
-                ></video>
             </a-assets>
 
-            <!-- Roma -->
+            <!-- Totem -->
             <a-entity
                 gltf-model="#totem"
                 rotation="0 180 0"
@@ -139,27 +97,11 @@
                 ></a-entity
             ></a-entity>
 
-            <a-entity
-                gltf-model="#randomTotem"
-                position="0 0 6"
-                scale="1.4 1.4 1.4"
-                gps-entity-place="latitude: 41.790278; longitude: 12.423110;"
-                ><a-entity
-                    videohandler
-                    id="random"
-                    material="src: #randomVideo;"
-                    geometry="primitive: plane"
-                    position="0.035 0.9 0.02"
-                    rotation="0 90 0"
-                    scale="1.4 0.787 0"
-                ></a-entity
-            ></a-entity>
-
             <a-camera
                 rotation-reader
                 look-controls-enabled="false"
                 arjs-look-controls="smoothingFactor: 0.1"
-                gps-camera="alert: true; positionMinAccuracy: 10; gpsMinDistance: 3; gpsTimeInterval: 1500; simulateLatitude: 41.790321; simulateLongitude: 12.423170"
+                gps-camera="alert: true; positionMinAccuracy: 10; gpsMinDistance: 3; gpsTimeInterval: 1500; simulateLatitude: 40.915359; simulateLongitude: 14.762904"
             ></a-camera>
         </a-scene>
     </body>
