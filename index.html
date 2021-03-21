@@ -9,7 +9,7 @@
         />
         <meta name="apple-mobile-web-app-capable" content="yes" />
 
-        <title>EU Playground</title>
+        <title>Europa Square - Liceo Innocenzo XII, Anzio</title>
         <!-- include A-Frame -->
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <!-- include Supermedium look-at component for A-Frame -->
@@ -18,6 +18,8 @@
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
         <!-- include loaders component for A-Frame -->
         <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+        <!-- include layout component for A-Frame -->
+        <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
         <!-- script to play and pause video -->
         <script src="./js/video-handler.js"></script>
         <!-- script to play and pause audio -->
@@ -45,32 +47,8 @@
     </head>
 
     <body style="margin: 0; overflow: hidden">
-        <script>
-            const src = "./assets/totems.json";
-
-            function getRndInteger(min, max) {
-                return Math.floor(Math.random() * (max - min + 1)) + min;
-            }
-
-            async function totemRandomizer() {
-                const response = await fetch(src);
-                const data = await response.json();
-                const dataLength = Object.keys(data).length;
-                console.log(dataLength);
-                const item = getRndInteger(1, dataLength);
-                document
-                    .getElementById("randomTotem")
-                    .setAttribute("src", data[item].totem);
-                document
-                    .getElementById("randomVideo")
-                    .setAttribute("src", data[item].video);
-            }
-
-            totemRandomizer();
-        </script>
-
         <div class="arjs-loader">
-            <div>Loading, please wait...</div>
+            <div>Europa Square is loading, please wait...</div>
         </div>
 
         <a-scene
@@ -84,16 +62,26 @@
             <!-- Assets -->
             <a-assets>
                 <a-asset-item
-                    id="totem"
-                    src="./assets/EU_04_BLU.gltf"
+                    id="totem1"
+                    src="./assets/IT01.glb"
                 ></a-asset-item>
 
                 <a-asset-item
                     id="totem2"
-                    src="./assets/IT14.glb"
+                    src="./assets/IT10.glb"
                 ></a-asset-item>
 
-                <a-asset-item id="randomTotem" src=""></a-asset-item>
+                <a-asset-item
+                    id="totem3"
+                    src="./assets/IT11.glb"
+                ></a-asset-item>
+
+                <a-asset-item
+                    id="totem4"
+                    src="./assets/IT12.glb"
+                ></a-asset-item>
+
+                <!-- Video Assets -->
 
                 <video
                     crossorigin="anonymous"
@@ -105,61 +93,120 @@
                     webkit-playsinline
                     playsinline
                     id="video1"
-                    src="./video/herman.mp4"
+                    src="./video/IT01-Denmark.mp4"
                 ></video>
 
                 <video
                     crossorigin="anonymous"
                     preload="auto"
                     autoplay
-                    muted="true"
+                    muted
                     response-type="arraybuffer"
                     loop
                     webkit-playsinline
                     playsinline
-                    id="randomVideo"
-                    src=""
+                    id="video2"
+                    src="./video/IT10-Belgium.mp4"
+                ></video>
+
+                <video
+                    crossorigin="anonymous"
+                    preload="auto"
+                    autoplay
+                    muted
+                    response-type="arraybuffer"
+                    loop
+                    webkit-playsinline
+                    playsinline
+                    id="video3"
+                    src="./video/IT11-Greece.mp4"
+                ></video>
+
+                <video
+                    crossorigin="anonymous"
+                    preload="auto"
+                    autoplay
+                    muted
+                    response-type="arraybuffer"
+                    loop
+                    webkit-playsinline
+                    playsinline
+                    id="video4"
+                    src="./video/IT12-Spain.mp4"
                 ></video>
             </a-assets>
 
-            <!-- Roma -->
+            <!-- Totem -->
             <a-entity
-                gltf-model="#totem"
-                rotation="0 180 0"
-                scale="1.4 1.4 1.4"
-                gps-entity-place="latitude: 41.790390; longitude: 12.423205;"
-                ><a-entity
-                    videohandler
-                    id="main"
-                    material="src: #video1;"
-                    geometry="primitive: plane"
-                    position="0.035 0.9 0.02"
-                    rotation="0 90 0"
-                    scale="1.4 0.787 0"
-                ></a-entity
-            ></a-entity>
+                gps-entity-place="latitude: 41.467230; longitude: 12.609960;"
+                layout="type: circle; radius: 6; angle: 60;"
+            >
+                <a-entity
+                    gltf-model="#totem1"
+                    rotation="0 180 0"
+                    scale="1.4 1.4 1.4"
+                    ><a-entity
+                        videohandler
+                        id="videoEn1"
+                        material="src: #video1;"
+                        geometry="primitive: plane"
+                        position="0.035 0.9 0.02"
+                        rotation="0 90 0"
+                        scale="1.4 0.787 0"
+                    ></a-entity
+                ></a-entity>
 
-            <a-entity
-                gltf-model="#totem2"
-                position="0 0 6"
-                scale="1.4 1.4 1.4"
-                gps-entity-place="latitude: 41.790278; longitude: 12.423110;"
-                ><a-entity
-                    videohandler
-                    id="random"
-                    material="src: #randomVideo;"
-                    geometry="primitive: plane"
-                    position="0.035 0.9 0.02"
-                    rotation="0 90 0"
-                    scale="1.4 0.787 0"
-                ></a-entity
-            ></a-entity>
+                <a-entity
+                    gltf-model="#totem2"
+                    rotation="0 180 0"
+                    scale="1.4 1.4 1.4"
+                    ><a-entity
+                        videohandler
+                        id="videoEn2"
+                        material="src: #video2;"
+                        geometry="primitive: plane"
+                        position="0.035 0.9 0.02"
+                        rotation="0 90 0"
+                        scale="1.4 0.787 0"
+                    ></a-entity
+                ></a-entity>
+
+                <a-entity
+                    gltf-model="#totem3"
+                    rotation="0 180 0"
+                    scale="1.4 1.4 1.4"
+                    ><a-entity
+                        videohandler
+                        id="videoEn3"
+                        material="src: #video3;"
+                        geometry="primitive: plane"
+                        position="0.035 0.9 0.02"
+                        rotation="0 90 0"
+                        scale="1.4 0.787 0"
+                    ></a-entity
+                ></a-entity>
+
+                <a-entity
+                    gltf-model="#totem4"
+                    rotation="0 180 0"
+                    scale="1.4 1.4 1.4"
+                    ><a-entity
+                        videohandler
+                        id="videoEn4"
+                        material="src: #video4;"
+                        geometry="primitive: plane"
+                        position="0.035 0.9 0.02"
+                        rotation="0 90 0"
+                        scale="1.4 0.787 0"
+                    ></a-entity
+                ></a-entity>
+            </a-entity>
 
             <a-camera
                 rotation-reader
                 look-controls-enabled="false"
                 arjs-look-controls="smoothingFactor: 0.1"
-                gps-camera="alert: true; positionMinAccuracy: 10; gpsMinDistance: 3; gpsTimeInterval: 1500; simulateLatitude: 41.790321; simulateLongitude: 12.423170"
+                gps-camera="alert: true; positionMinAccuracy: 10; gpsMinDistance: 3; gpsTimeInterval: 1500; simulateLatitude:  41.467230; simulateLongitude: 12.609960"
             ></a-camera>
         </a-scene>
     </body>
