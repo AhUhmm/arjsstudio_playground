@@ -52,6 +52,7 @@
         </div>
 
         <a-scene
+            audiohandler
             vr-mode-ui="enabled: false"
             loading-screen="enabled: false;"
             renderer="logarithmicDepthBuffer: true;"
@@ -60,27 +61,29 @@
         >
             <!-- Assets -->
             <a-assets>
+                <!-- 3D Models -->
+
                 <a-asset-item
                     id="totem1"
-                    src="./assets/IT01.glb"
+                    src="./assets/HR07.glb"
                 ></a-asset-item>
 
                 <a-asset-item
                     id="totem2"
-                    src="./assets/IT10.glb"
+                    src="./assets/HR08.glb"
                 ></a-asset-item>
 
                 <a-asset-item
                     id="totem3"
-                    src="./assets/IT11.glb"
+                    src="./assets/HR18.glb"
                 ></a-asset-item>
 
                 <a-asset-item
                     id="totem4"
-                    src="./assets/IT12.glb"
+                    src="./assets/HR19.glb"
                 ></a-asset-item>
 
-                <!-- Video Assets -->
+                <!-- Videos -->
 
                 <video
                     crossorigin="anonymous"
@@ -92,7 +95,7 @@
                     webkit-playsinline
                     playsinline
                     id="video1"
-                    src="./video/IT01-Denmark.mp4"
+                    src="./video/HR07.mp4"
                 ></video>
 
                 <video
@@ -105,7 +108,7 @@
                     webkit-playsinline
                     playsinline
                     id="video2"
-                    src="./video/IT10-Belgium.mp4"
+                    src="./video/HR08.mp4"
                 ></video>
 
                 <video
@@ -118,7 +121,7 @@
                     webkit-playsinline
                     playsinline
                     id="video3"
-                    src="./video/IT11-Greece.mp4"
+                    src="./video/HR18.mp4"
                 ></video>
 
                 <video
@@ -131,7 +134,7 @@
                     webkit-playsinline
                     playsinline
                     id="video4"
-                    src="./video/IT12-Spain.mp4"
+                    src="./video/HR19.mp4"
                 ></video>
             </a-assets>
 
@@ -140,9 +143,9 @@
             <a-entity
                 gltf-model="#totem1"
                 scale="1.4 1.4 1.4"
-                gps-entity-place="latitude: 41.467230; longitude: 12.609960;"
+                gps-entity-place="latitude: 43.413676; longitude: 17.206291;"
                 ><a-entity
-                    videohandler
+                    vidhandler="target: #video1"
                     id="videoEn1"
                     material="src: #video1;"
                     geometry="primitive: plane"
@@ -154,10 +157,10 @@
 
             <a-entity
                 gltf-model="#totem2"
-                gps-entity-place="latitude: 41.467270; longitude: 12.610000;"
                 scale="1.4 1.4 1.4"
+                gps-entity-place="latitude: 43.413596; longitude: 17.206341;"
                 ><a-entity
-                    videohandler
+                    vidhandler="target: #video2"
                     id="videoEn2"
                     material="src: #video2;"
                     geometry="primitive: plane"
@@ -169,10 +172,10 @@
 
             <a-entity
                 gltf-model="#totem3"
-                gps-entity-place="latitude: 41.467310; longitude: 12.610040;"
                 scale="1.4 1.4 1.4"
+                gps-entity-place="latitude: 43.413486; longitude: 17.206431;"
                 ><a-entity
-                    videohandler
+                    vidhandler="target: #video3"
                     id="videoEn3"
                     material="src: #video3;"
                     geometry="primitive: plane"
@@ -184,10 +187,10 @@
 
             <a-entity
                 gltf-model="#totem4"
-                gps-entity-place="latitude: 41.467350; longitude: 12.610080;"
                 scale="1.4 1.4 1.4"
+                gps-entity-place="latitude: 43.413396; longitude: 17.206491;"
                 ><a-entity
-                    videohandler
+                    vidhandler="target: #video4"
                     id="videoEn4"
                     material="src: #video4;"
                     geometry="primitive: plane"
@@ -201,7 +204,7 @@
                 rotation-reader
                 look-controls-enabled="false"
                 arjs-look-controls="smoothingFactor: 0.1"
-                gps-camera="alert: true; positionMinAccuracy: 10; gpsMinDistance: 3; gpsTimeInterval: 1500; simulateLatitude:  41.467350; longitude: 12.610120;"
+                gps-camera="alert: true; positionMinAccuracy: 10; gpsMinDistance: 3; gpsTimeInterval: 1500; simulateLatitude:  43.413532; longitude: 17.206401;"
             ></a-camera>
         </a-scene>
     </body>
