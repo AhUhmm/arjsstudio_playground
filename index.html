@@ -25,7 +25,8 @@
         <!-- script to play and pause video -->
         <script src="./js/videohandler.js"></script>
         <!-- script to play and pause audio -->
-        <script src="./js/audio-handler-1.js"></script>
+        <!-- <script src="./js/audio-handler-1.js"></script> -->
+        <script src="./js/interaction.js"></script>
     </head>
 
     <body style="margin: 0; overflow: hidden">
@@ -37,8 +38,9 @@
         </div>
 
         <a-scene
-            audiohandler
             vr-mode-ui="enabled: false"
+            cursor="rayOrigin: mouse"
+            raycaster="near: 0; far: 50000; objects: .clickable"
             loading-screen="enabled: false;"
             renderer="logarithmicDepthBuffer: true;"
             embedded
@@ -129,6 +131,8 @@
                 gltf-model="#totem1"
                 scale="1.4 1.4 1.4"
                 gps-entity-place="latitude: 43.413676; longitude: 17.206291;"
+                intersection
+                class="clickable"
                 ><a-entity
                     vidhandler="target: #video1"
                     id="videoEn1"
@@ -144,6 +148,8 @@
                 gltf-model="#totem2"
                 scale="1.4 1.4 1.4"
                 gps-entity-place="latitude: 43.413596; longitude: 17.206341;"
+                intersection
+                class="clickable"
                 ><a-entity
                     vidhandler="target: #video2"
                     id="videoEn2"
@@ -159,6 +165,8 @@
                 gltf-model="#totem3"
                 scale="1.4 1.4 1.4"
                 gps-entity-place="latitude: 43.413486; longitude: 17.206431;"
+                intersection
+                class="clickable"
                 ><a-entity
                     vidhandler="target: #video3"
                     id="videoEn3"
@@ -174,6 +182,8 @@
                 gltf-model="#totem4"
                 scale="1.4 1.4 1.4"
                 gps-entity-place="latitude: 43.413396; longitude: 17.206491;"
+                intersection
+                class="clickable"
                 ><a-entity
                     vidhandler="target: #video4"
                     id="videoEn4"
