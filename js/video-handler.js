@@ -1,7 +1,9 @@
 AFRAME.registerComponent("videohandler", {
     init: function () {
         this.toggle = false;
-        this.vidNodes = document.querySelectorAll("#video1, #video2");
+        this.vidNodes = document.querySelectorAll(
+            "#video1, #video2, #video3, #video4"
+        );
         for (let i = 0; i < this.vidNodes.length; i++) {
             this.vidNodes[i].pause();
         }
