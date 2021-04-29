@@ -126,7 +126,8 @@
             </a-assets>
 
             <!-- Totem -->
-
+            <!--             <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: .clickable"></a-entity>
+ -->
             <a-entity
                 gltf-model="#totem1"
                 scale="1.4 1.4 1.4"
@@ -134,7 +135,6 @@
                 intersection
                 class="clickable"
                 ><a-entity
-                    clicker
                     vidhandler="target: #video1"
                     id="videoEn1"
                     material="src: #video1;"
@@ -152,7 +152,6 @@
                 intersection
                 class="clickable"
                 ><a-entity
-                    clicker
                     vidhandler="target: #video2"
                     id="videoEn2"
                     material="src: #video2;"
@@ -200,6 +199,9 @@
             <a-camera
                 rotation-reader
                 look-controls-enabled="false"
+                near="0.1"
+                far="50000"
+                fov="80"
                 arjs-look-controls="smoothingFactor: 0.1"
                 gps-camera="alert: true; positionMinAccuracy: 10; gpsMinDistance: 3; gpsTimeInterval: 1500; simulateLatitude:  43.413522; simulateLongitude: 17.206501;"
             ></a-camera>
