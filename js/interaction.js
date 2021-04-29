@@ -1,4 +1,4 @@
-FRAME.registerComponent("intersection", {
+AFRAME.registerComponent("intersection", {
     init: function () {
         let el = this.el;
         let self = this;
@@ -13,9 +13,9 @@ FRAME.registerComponent("intersection", {
                 if (node.isMesh) {
                     console.log(node);
                     self.parts.push(node);
-                    /* node.material = new THREE.MeshStandardMaterial({
+                    node.material = new THREE.MeshStandardMaterial({
                         color: 0x33aa00,
-                    }); */
+                    });
                 }
             });
         });
