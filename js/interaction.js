@@ -13,9 +13,9 @@ AFRAME.registerComponent("intersection", {
                 if (node.isMesh) {
                     console.log(node);
                     self.parts.push(node);
-                    node.material = new THREE.MeshStandardMaterial({
+                    /* node.material = new THREE.MeshStandardMaterial({
                         color: 0x33aa00,
-                    });
+                    }); */
                 }
             });
         });
