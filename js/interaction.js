@@ -25,7 +25,7 @@ AFRAME.registerComponent("intersection", {
             let intersection = self.raycaster.components.raycaster.getIntersection(
                 el
             );
-            console.log(
+            alert(
                 "click",
                 intersection.object.name,
                 self.mouseOverObject,
